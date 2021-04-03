@@ -1,7 +1,7 @@
 {
   "cpu": {
     "fqbn": "arduino:samd:nano_33_iot",
-    "name": "",
+    "name": "Arduino NANO 33 IoT",
     "type": "serial"
   },
   "secrets": [

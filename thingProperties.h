@@ -11,15 +11,22 @@ const char PASS[]     = SECRET_PASS;    // Network password (use for WPA, or use
 
 void onTemperature2Change();
 void onTemperature1Change();
+void onTemperature3Change();
 
 CloudTemperature temperature2;
 CloudTemperature temperature1;
+CloudTemperatureSensor currentTemperature1;
+CloudTemperatureSensor currentTemperature2;
+CloudTemperature temperature3;
 
 void initProperties(){
 
   ArduinoCloud.setThingId(THING_ID);
   ArduinoCloud.addProperty(temperature2, READWRITE, ON_CHANGE, onTemperature2Change, 1);
   ArduinoCloud.addProperty(temperature1, READWRITE, ON_CHANGE, onTemperature1Change, 1);
+  ArduinoCloud.addProperty(currentTemperature1, READ, ON_CHANGE, NULL, 1);
+  ArduinoCloud.addProperty(currentTemperature2, READ, ON_CHANGE, NULL, 1);
+  ArduinoCloud.addProperty(temperature3, READWRITE, ON_CHANGE, onTemperature3Change, 1);
 
 }
 
